@@ -37,6 +37,10 @@
 
 @implementation NSDate(Calendar)
 
++(id)calendarDate {
+	return [NSDate date];
+}
+
 + (id)today{
   NSDate *theDate = [NSDate date];
   
@@ -55,9 +59,17 @@
   return [comps year];
 }
 
+-(int)yearOfCommonEra {
+	return [self year]; // Not sure if this is right or not.
+}
+
 - (int)month{
   NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSMonthCalendarUnit) fromDate:self];
   return [comps month];
+}
+
+-(int)monthOfYear {
+	return [self month];
 }
 
 - (int)day{
@@ -65,9 +77,27 @@
   return [comps day];
 }
 
+-(int)dayOfYear {
+	return [self day]; // Not sure if this is right or not.
+}
+
 - (int)weekday{
   NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSWeekdayCalendarUnit) fromDate:self];
   return [comps weekday];
+}
+
+-(int)dayOfWeek {
+	return [self weekday];
+}
+
+-(int)hourOfDay {
+	NSDateComponents* comps = [[NSCalendar currentCalendar] components:(NSHourCalendarUnit) fromDate:self]; 
+	return [comps hour];
+}
+
+-(int)minuteOfHour {
+	NSDateComponents* comps = [[NSCalendar currentCalendar] components:(NSMinuteCalendarUnit) fromDate:self]; 
+	return [comps minute];
 }
 
 - (NSDate *)firstDayOfCurrentMonth{

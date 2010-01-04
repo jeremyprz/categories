@@ -31,14 +31,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+typedef NSDate NSCalendarDate;
 
 @interface NSDate(Calendar)
 
   +(id)today;
+  +(id)calendarDate;
   -(int)year;
+  -(int)yearOfCommonEra;
   -(int)month;
+  -(int)monthOfYear;
   -(int)day;
+  -(int)dayOfYear;
   -(int)weekday;
+  -(int)dayOfWeek;
+  -(int)hourOfDay; 
+  -(int)minuteOfHour;
   -(NSDate *)firstDayOfCurrentMonth;
   -(NSDate *)firstDayOfCurrentWeek;
   -(NSDate *)dateByAddingYears:(int)years months:(int)months days:(int)days hours:(int)hours minutes:(int)minutes seconds:(int)seconds;
